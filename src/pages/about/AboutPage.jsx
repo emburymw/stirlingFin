@@ -1,19 +1,19 @@
 import { LINKS } from '../../lib/constants/links.js'
 import { ButtonLink } from '../../components/ui/ButtonLink.jsx'
 import drewImage from '../../assets/drew-stirling.jpg'
-
+import portraitPlaceholder from '../../assets/Portrait_Placeholder.png'
 
 const team = [
   { name: 'Drew', role: 'Founder & Wealth Advisor', photo: drewImage },
-  { name: 'Bailey', role: 'Branch Administrator' },
-  { name: 'Ross', role: 'Client Admin Support' },
+  { name: 'Bailey', role: 'Branch Administrator', photo: portraitPlaceholder },
+  { name: 'Ross', role: 'Client Admin Support', photo: portraitPlaceholder },
 ]
 
 export default function AboutPage() {
   return (
     <article className="page prose">
       <header className="about-intro">
-        <div className="about-intro-text">
+        <div className="about-intro-text page-hero-panel">
           <p className="page-eyebrow">About</p>
           <h1>Drew Stirling</h1>
           <p className="page-lead">Founder &amp; Wealth Advisor</p>
@@ -29,8 +29,8 @@ export default function AboutPage() {
           className="about-intro-photo"
           src={drewImage}
           alt="Drew Stirling"
-          width={280}
-          height={280}
+          width={380}
+          height={380}
         />
       </header>
 
@@ -74,26 +74,21 @@ export default function AboutPage() {
         <ul className="team-grid">
           {team.map((m) => (
             <li key={m.name} className="team-card">
-              {m.photo ? (
-                <img
-                  className="team-photo"
-                  src={m.photo}
-                  alt=""
-                  width={172}
-                  height={172}
-                />
-              ) : (
-                <div className="team-photo-placeholder" aria-hidden="true" />
-              )}
+              <img
+                className="team-photo"
+                src={m.photo}
+                alt=""
+                width={172}
+                height={172}
+              />
               <h3>{m.name}</h3>
               <p>{m.role}</p>
             </li>
           ))}
         </ul>
-        <p className="team-cta-wrap">
-          <br/>
+        <section className="page-cta-band" aria-label="Work with us">
           <ButtonLink href={LINKS.calendlyNewClient}>Work with us</ButtonLink>
-        </p>
+        </section>
       </section>
     </article>
   )

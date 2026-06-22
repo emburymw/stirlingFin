@@ -10,11 +10,12 @@
   --shadow:
     rgba(45, 55, 70, 0.08) 0 10px 24px -4px, rgba(45, 55, 70, 0.04) 0 4px 8px -2px;
 
-  --blue: #8ed4ed;
-  --blue-deep: #4a9eb8;
-  --blue-bg: rgba(142, 212, 237, 0.22);
-  --link: #3a8aa3;
-  --link-hover: #2d6f85;
+  --brand-blue: #003153;
+  --blue: #4d7391;
+  --blue-deep: #003153;
+  --blue-bg: rgba(0, 49, 83, 0.14);
+  --link: #1a5578;
+  --link-hover: #003153;
 
   --gold: #c6a86a;
   --gold-soft: #dcc48f;
@@ -26,12 +27,12 @@
   --accent-bg: var(--gold-bg);
   --accent-border: var(--gold-border);
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: 'Source Sans 3', 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Barlow', 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
+  font: 18px/140% var(--sans);
+  letter-spacing: 0.01em;
   color-scheme: light;
   color: var(--text);
   font-synthesis: none;
@@ -81,17 +82,19 @@ body::before {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--heading);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-h);
+  letter-spacing: -0.025em;
 }
 
 /* Default heading scale — hero blocks override with tighter scope */
 h1 {
   font-size: 2rem;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
   margin: 1.25rem 0;
   @media (max-width: 1024px) {
     font-size: 1.65rem;
@@ -100,12 +103,17 @@ h1 {
 }
 h2 {
   font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   margin: 0 0 8px;
   @media (max-width: 1024px) {
     font-size: 20px;
   }
+}
+h3 {
+  font-size: 1.05rem;
+  line-height: 1.25;
+  margin: 0 0 6px;
 }
 p {
   margin: 0;

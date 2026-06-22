@@ -1,6 +1,6 @@
 import { LINKS } from '../../../lib/constants/links.js'
+import { handshakeHeroStyle } from '../../../lib/constants/hero.js'
 import { ButtonLink } from '../../../components/ui/ButtonLink.jsx'
-
 const reasons = [
   'Buying your first home',
   'Starting a family',
@@ -26,14 +26,16 @@ const offerings = [
 export default function InsurancePage() {
   return (
     <article className="page prose">
-      <header className="page-hero">
-        <p className="page-eyebrow">Services · Insurance</p>
-        <h1>Safeguard your financial future.</h1>
-        <p className="page-lead">
-          Life is full of curveballs — let&apos;s make sure you and your loved
-          ones are protected from the unexpected.
-        </p>
-        <ButtonLink href={LINKS.calendlyNewClient}>Let&apos;s chat</ButtonLink>
+      <header className="page-hero page-hero-photo" style={handshakeHeroStyle}>
+        <div className="page-hero-panel">
+          <p className="page-eyebrow">Services · Insurance</p>
+          <h1>Safeguard your financial future.</h1>
+          <p className="page-lead">
+            Life is full of curveballs — let&apos;s make sure you and your loved
+            ones are protected from the unexpected.
+          </p>
+          <ButtonLink href={LINKS.calendlyNewClient}>Let&apos;s chat</ButtonLink>
+        </div>
       </header>
 
       <section aria-labelledby="ins-intro-heading">

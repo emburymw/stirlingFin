@@ -8,7 +8,6 @@ import {
   InsurancePage,
   ACPIPage,
   ContactPage,
-  ServicesPage,
 } from '../pages/index.js'
 
 /**
@@ -21,7 +20,6 @@ export function AppRoutes() {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />
-        <Route path="services" element={<ServicesPage />} />
         <Route
           path="services/financial-planning"
           element={<FinancialPlanningPage />}

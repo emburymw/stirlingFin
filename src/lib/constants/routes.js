@@ -3,7 +3,6 @@ export const ROUTES = {
   home: '/',
   about: '/about',
   services: {
-    root: '/services',
     financialPlanning: '/services/financial-planning',
     investmentManagement: '/services/investment-management',
     insurance: '/services/insurance',

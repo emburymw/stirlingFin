@@ -1,9 +1,35 @@
-import { NavLink } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
 import { ROUTES } from '../../lib/constants/routes.js'
 import { LINKS } from '../../lib/constants/links.js'
 import { ButtonLink } from '../ui/ButtonLink.jsx'
 
 export function SiteHeader() {
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const suppressServicesOpen = useRef(false)
+  const location = useLocation()
+
+  useEffect(() => {
+    setServicesOpen(false)
+    suppressServicesOpen.current = false
+  }, [location.pathname])
+
+  const openServicesMenu = () => {
+    if (!suppressServicesOpen.current) {
+      setServicesOpen(true)
+    }
+  }
+
+  const closeServicesMenu = () => {
+    setServicesOpen(false)
+    suppressServicesOpen.current = true
+  }
+
+  const handleServicesMouseLeave = () => {
+    setServicesOpen(false)
+    suppressServicesOpen.current = false
+  }
+
   return (
     <header className="site-header">
       <div className="site-header-inner">
@@ -29,28 +55,44 @@ export function SiteHeader() {
                 About
               </NavLink>
             </li>
-            <li className="site-nav-services">
+            <li
+              className={[
+                'site-nav-services',
+                servicesOpen && 'is-open',
+              ]
+                .filter(Boolean)
+                .join(' ')}
+              onMouseEnter={openServicesMenu}
+              onMouseLeave={handleServicesMouseLeave}
+            >
               <span className="site-nav-label">Services</span>
               <ul className="site-nav-submenu">
                 <li>
-                  <NavLink to={ROUTES.services.root}>Overview</NavLink>
-                </li>
-                <li>
-                  <NavLink to={ROUTES.services.financialPlanning}>
+                  <NavLink
+                    to={ROUTES.services.financialPlanning}
+                    onClick={closeServicesMenu}
+                  >
                     Financial Planning
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to={ROUTES.services.investmentManagement}>
+                  <NavLink
+                    to={ROUTES.services.investmentManagement}
+                    onClick={closeServicesMenu}
+                  >
                     Investment Management
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to={ROUTES.services.insurance}>Insurance</NavLink>
+                  <NavLink
+                    to={ROUTES.services.insurance}
+                    onClick={closeServicesMenu}
+                  >
+                    Insurance
+                  </NavLink>
                 </li>
               </ul>
-            </li>
-            <li>
+            </li>            <li>
               <NavLink to={ROUTES.acpi} className="nav-pill">
                 ACPI
               </NavLink>

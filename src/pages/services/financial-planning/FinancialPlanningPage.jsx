@@ -1,6 +1,6 @@
 import { LINKS } from '../../../lib/constants/links.js'
+import { handshakeHeroStyle } from '../../../lib/constants/hero.js'
 import { ButtonLink } from '../../../components/ui/ButtonLink.jsx'
-
 const steps = [
   {
     title: 'Discovery consultation',
@@ -23,14 +23,16 @@ const steps = [
 export default function FinancialPlanningPage() {
   return (
     <article className="page prose">
-      <header className="page-hero">
-        <p className="page-eyebrow">Services · Financial planning</p>
-        <h1>A clear financial roadmap forward.</h1>
-        <p className="page-lead">
-          Careful financial analysis and thoughtful planning that empower you to
-          live life on your terms.
-        </p>
-        <ButtonLink href={LINKS.calendlyNewClient}>Book a consultation</ButtonLink>
+      <header className="page-hero page-hero-photo" style={handshakeHeroStyle}>
+        <div className="page-hero-panel">
+          <p className="page-eyebrow">Services · Financial planning</p>
+          <h1>A clear financial roadmap forward.</h1>
+          <p className="page-lead">
+            Careful financial analysis and thoughtful planning that empower you to
+            live life on your terms.
+          </p>
+          <ButtonLink href={LINKS.calendlyNewClient}>Book a consultation</ButtonLink>
+        </div>
       </header>
 
       <section aria-labelledby="fp-intro-heading">

@@ -5,4 +5,3 @@ export { default as InvestmentManagementPage } from './services/investment-manag
 export { default as InsurancePage } from './services/insurance/InsurancePage.jsx'
 export { default as ACPIPage } from './acpi/ACPIPage.jsx'
 export { default as ContactPage } from './contact/ContactPage.jsx'
-export { default as ServicesPage } from './services/ServicesPage.jsx'

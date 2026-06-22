@@ -1,15 +1,21 @@
 import { LINKS } from '../../lib/constants/links.js'
+import { handshakeHeroStyle } from '../../lib/constants/hero.js'
 
 export default function ACPIPage() {
   return (
     <article className="page prose">
-      <header className="page-hero page-hero-compact">
-        <p className="page-eyebrow">ACPI &amp; affiliations</p>
-        <h1>Aligned Capital Partners Inc.</h1>
-        <p className="page-lead">
-          Regulatory disclosures, client resources, and approved affiliations —
-          including wealth-management relationships — as required by your dealer.
-        </p>
+      <header
+        className="page-hero page-hero-compact page-hero-photo"
+        style={handshakeHeroStyle}
+      >
+        <div className="page-hero-panel">
+          <p className="page-eyebrow">ACPI &amp; affiliations</p>
+          <h1>Aligned Capital Partners Inc.</h1>
+          <p className="page-lead">
+            Regulatory disclosures, client resources, and approved affiliations —
+            including wealth-management relationships — as required by your dealer.
+          </p>
+        </div>
       </header>
 
       <section aria-labelledby="acpi-portal-heading">

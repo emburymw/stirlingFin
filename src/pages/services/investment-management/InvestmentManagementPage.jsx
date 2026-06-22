@@ -1,19 +1,22 @@
 import acpiImage from '../../../assets/acpiImage.png'
 import { LINKS } from '../../../lib/constants/links.js'
+import { handshakeHeroStyle } from '../../../lib/constants/hero.js'
 import { ButtonLink } from '../../../components/ui/ButtonLink.jsx'
 import alphabullImage from '../../../assets/alphaBull.png'
 
 export default function InvestmentManagementPage() {
   return (
     <article className="page prose">
-      <header className="page-hero">
-        <p className="page-eyebrow">Services · Investment management</p>
-        <h1>Personalized portfolio construction and oversight.</h1>
-        <p className="page-lead">
-          Strategic investment selections designed to grow and protect your
-          wealth.
-        </p>
-        <ButtonLink href={LINKS.calendlyNewClient}>Book a consultation</ButtonLink>
+      <header className="page-hero page-hero-photo" style={handshakeHeroStyle}>
+        <div className="page-hero-panel">
+          <p className="page-eyebrow">Services · Investment management</p>
+          <h1>Personalized portfolio construction and oversight.</h1>
+          <p className="page-lead">
+            Strategic investment selections designed to grow and protect your
+            wealth.
+          </p>
+          <ButtonLink href={LINKS.calendlyNewClient}>Book a consultation</ButtonLink>
+        </div>
       </header>
 
       <section aria-labelledby="im-intro-heading">

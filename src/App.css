@@ -520,8 +520,8 @@
   border-radius: 16px;
   border: 1px solid color-mix(in srgb, var(--gold) 22%, transparent);
   background: color-mix(in srgb, var(--bg) 18%, transparent);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   box-shadow:
     rgba(0, 49, 83, 0.08) 0 16px 36px -14px,
     inset 0 1px 0 color-mix(in srgb, #fff 22%, transparent);
